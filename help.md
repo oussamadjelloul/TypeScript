@@ -24,11 +24,11 @@ for create init file in typescript you can use : tsc -init .
 
 
 ### function optional and default : 
-<code>
-function showData(name:string="Un" , age:number=0, country?:string="Un"){
-    return `${name}--${age}--${country}`
-}
-</code>
+
+    function showData(name:string="Un" , age:number=0, country?:string="Un"){
+        return `${name}--${age}--${country}`
+    }
+
 
 country is option parametre . 
 
