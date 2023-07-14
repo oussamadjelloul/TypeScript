@@ -182,6 +182,120 @@ let user: User = {
 console.log(user.getNameCountry('oussama djelloul', "algeria"))
 
 
+console.log("**********************************************************************")
+
+enum COUTNRY {
+    algeria = "Algeria",
+    tunisia = "Tunisia",
+    morroco = "Morroco",
+    egypt = "Egypt",
+    libya = "Libya"
+}
+
+class User1 {
+    // private u: string;
+    // private s: number;
+    // private c: COUTNRY;
+    public static creater: number = 0;
+    constructor(private _userName: string, private _salery: number, protected country: COUTNRY) {
+        this._userName = _userName;
+        this._salery = _salery;
+        this.country = country;
+        User1.creater++;
+        // this.creater++;
+    }
+    public getCreater(): void {
+        console.log('your nomber of object ', User1.creater)
+    }
+    public get userName(): string {
+        return this._userName;
+    }
+    public set userName(value: string) {
+        this._userName = value;
+    }
+    Ms(): string {
+        return `your name is ${this._userName} and your salery is ${this._salery} and your country is ${this.country}`
+    }
+}
+
+const user1 = new User1("oussama djelloul", 2000, COUTNRY.algeria);
+const user2 = new User1("oussama djelloul", 2000, COUTNRY.algeria);
+
+console.log(user1.Ms());
+
+console.log('your nomber of object ', User1.creater);
+user1.getCreater();
 
 
+
+
+
+console.log("*************************************************************************");
+
+class Player {
+
+    constructor(public name: string) {
+        this.name = name
+    }
+    attck(): void {
+        console.log("attacker ")
+    }
+}
+
+
+class Amazon extends Player {
+    constructor(name: string, public spears: number) {
+        super(name)
+    }
+    override attck(): void {
+        console.log("attacking by spears ")
+    }
+}
+
+function returnType<T>(arg: T): T {
+    return arg;
+}
+
+function returnMultiType<T, S>(arg1: T, arg2: S): string {
+    return `${typeof arg1} and ${typeof arg2}`;
+}
+console.log(returnType<number>(1000));
+console.log(returnType<number[]>([1, 2, 3, 4]));
+console.log(returnMultiType<number[], string>([1, 2, 3, 4], "oussama"));
+
+class Emply<T> {
+    constructor(public name: T) { }
+    public Ms(v: T) {
+        return v
+    }
+}
+
+let e1 = new Emply<string | number>("oussama");
+console.log(e1.Ms(1000))
+
+console.log("*********************************************************************************");
+
+interface Book {
+    itemName: string,
+    price: number,
+    isb: number
+}
+interface Game {
+    itemName: string,
+    price: number,
+    style: string
+}
+
+class Collection<T>{
+    public data: T[] = []
+    constructor(item: T) {
+        this.data.push(item)
+    }
+}
+
+let item1 = new Collection<Book>({ itemName: "book", price: 1000, isb: 100 })
+let item2 = new Collection<Game>({ itemName: "game", price: 1999, style: "Action" })
+
+console.log(item1.data)
+console.log(item2.data)
 

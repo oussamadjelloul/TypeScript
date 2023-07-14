@@ -47,7 +47,10 @@ never it means that function don't return and don't have ( infinity )
 
 so for knonw this problem ("allowUnreachableCode": false Disable error reporting for unreachable code. )
 
-##  Type assertions ; 
+##  Type annotation with class in typescript ; 
+    in ecma script (in javascript) , you can use #_file for private class . 
+    public and private and protected like java , 
+    and you can find readonly it replace finaly in java .   
 
 
 

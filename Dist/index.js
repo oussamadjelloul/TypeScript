@@ -100,4 +100,91 @@ let user = {
     }
 };
 console.log(user.getNameCountry('oussama djelloul', "algeria"));
+console.log("**********************************************************************");
+var COUTNRY;
+(function (COUTNRY) {
+    COUTNRY["algeria"] = "Algeria";
+    COUTNRY["tunisia"] = "Tunisia";
+    COUTNRY["morroco"] = "Morroco";
+    COUTNRY["egypt"] = "Egypt";
+    COUTNRY["libya"] = "Libya";
+})(COUTNRY || (COUTNRY = {}));
+class User1 {
+    constructor(_userName, _salery, country) {
+        this._userName = _userName;
+        this._salery = _salery;
+        this.country = country;
+        this._userName = _userName;
+        this._salery = _salery;
+        this.country = country;
+        User1.creater++;
+    }
+    getCreater() {
+        console.log('your nomber of object ', User1.creater);
+    }
+    get userName() {
+        return this._userName;
+    }
+    set userName(value) {
+        this._userName = value;
+    }
+    Ms() {
+        return `your name is ${this._userName} and your salery is ${this._salery} and your country is ${this.country}`;
+    }
+}
+User1.creater = 0;
+const user1 = new User1("oussama djelloul", 2000, COUTNRY.algeria);
+const user2 = new User1("oussama djelloul", 2000, COUTNRY.algeria);
+console.log(user1.Ms());
+console.log('your nomber of object ', User1.creater);
+user1.getCreater();
+console.log("*************************************************************************");
+class Player {
+    constructor(name) {
+        this.name = name;
+        this.name = name;
+    }
+    attck() {
+        console.log("attacker ");
+    }
+}
+class Amazon extends Player {
+    constructor(name, spears) {
+        super(name);
+        this.spears = spears;
+    }
+    attck() {
+        console.log("attacking by spears ");
+    }
+}
+function returnType(arg) {
+    return arg;
+}
+function returnMultiType(arg1, arg2) {
+    return `${typeof arg1} and ${typeof arg2}`;
+}
+console.log(returnType(1000));
+console.log(returnType([1, 2, 3, 4]));
+console.log(returnMultiType([1, 2, 3, 4], "oussama"));
+class Emply {
+    constructor(name) {
+        this.name = name;
+    }
+    Ms(v) {
+        return v;
+    }
+}
+let e1 = new Emply("oussama");
+console.log(e1.Ms(1000));
+console.log("*********************************************************************************");
+class Collection {
+    constructor(item) {
+        this.data = [];
+        this.data.push(item);
+    }
+}
+let item1 = new Collection({ itemName: "book", price: 1000, isb: 100 });
+let item2 = new Collection({ itemName: "game", price: 1999, style: "Action" });
+console.log(item1.data);
+console.log(item2.data);
 //# sourceMappingURL=index.js.map
